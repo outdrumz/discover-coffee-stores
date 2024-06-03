@@ -4,7 +4,7 @@ import { addRequestMeta } from "next/dist/server/request-meta";
 const getListOfCoffeeStorePhotos = async () => {
     try {
         const response = await fetch(
-            `https://api.unsplash.com/search/photos/?client_id=${process.env.UNSPLASH_ACCESS_KEY}&query="coffee shop"&page=1&perPage=10`
+            `https://api.unsplash.com/search/photos/?client_id=${process.env.UNSPLASH_ACCESS_KEY}&query="coffee shop"&page=1&perPage=10orientation=landscape`
         );
         const photos = await response.json();
         const results = photos?.results || [];
